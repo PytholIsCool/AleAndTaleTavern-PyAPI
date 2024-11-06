@@ -1,4 +1,4 @@
-# Ale And Tale Tavern Button API
+# Ale And Tale Tavern Button API (For MelonLoader)
 
 ## Features
 
