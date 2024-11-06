@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{788BC472-59F7-46F6-B760-65C18BA74389}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PyAPI</RootNamespace>
+    <AssemblyName>A&amp;T_PyAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>$(SolutionDir)Output\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+    <DebugSymbols>false</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="CFXRDemo">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\CFXRDemo.dll</HintPath>
+    </Reference>
+    <Reference Include="CFXRRuntime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\CFXRRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="DissonanceFMOD_Playback">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\DissonanceFMOD_Playback.dll</HintPath>
+    </Reference>
+    <Reference Include="DissonanceFMOD_Recording">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\DissonanceFMOD_Recording.dll</HintPath>
+    </Reference>
+    <Reference Include="DissonanceVoip">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\DissonanceVoip.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch Transport for Netcode for GameObjects">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Facepunch Transport for Netcode for GameObjects.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="IngameDebugConsole.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\IngameDebugConsole.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="KinoBloom.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\KinoBloom.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\MelonLoader\net35\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="NavMeshComponents">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\NavMeshComponents.dll</HintPath>
+    </Reference>
+    <Reference Include="NavMeshComponentsExamples">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\NavMeshComponentsExamples.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OccaSoftware.SuperSimpleSkybox.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\OccaSoftware.SuperSimpleSkybox.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="SmoothGridLayout">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\SmoothGridLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="unity-websocket-sharp">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\unity-websocket-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Addressables.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.AI.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Animation.Rigging.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging.DocCodeExamples">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Animation.Rigging.DocCodeExamples.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.013">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.InternalAPIEngineBridge.013.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Jobs">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Jobs.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Localization">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Localization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.Adapters">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.Adapters.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.Adapters.Ngo1">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.Adapters.Ngo1.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.Common">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.Initialization">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.Initialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.MetricEvents">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.MetricEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.MetricTestData">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.MetricTestData.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.MetricTypes">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.MetricTypes.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStats">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetStats.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Component">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Component.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Configuration">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsMonitor.Implementation">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetStatsMonitor.Implementation.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetStatsReporting">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetStatsReporting.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetworkProfiler.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetworkProfiler.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Tools.NetworkSolutionInterface">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Multiplayer.Tools.NetworkSolutionInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Components">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Netcode.Components.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Transport">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Networking.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Profiling.Core">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Profiling.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.ResourceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.ScriptableBuildPipeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Authentication">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Authentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Analytics">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Configuration">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Device">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Environments.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments.Internal">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Environments.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Internal">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Networking">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Registration">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Scheduler">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Telemetry">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Threading">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Core.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Lobbies">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Lobbies.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.QoS">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.QoS.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Relay">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Relay.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Wire.Internal">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Services.Wire.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ClusterRendererModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ContentLoadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.PropertiesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.VirtualTexturingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="WaterSystem">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\WaterSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\websocket-sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ButtonAPI\GameAPI\Base.cs" />
+    <Compile Include="ButtonAPI\MainMenuAPI\Base.cs" />
+    <Compile Include="ButtonAPI\Types\PyPage.cs" />
+    <Compile Include="ButtonAPI\Types\Root.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\Page.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\PanelButton.cs" />
+    <Compile Include="ButtonAPI\Uni\Tab.cs" />
+    <Compile Include="ButtonAPI\Uni\TabControls\Selector.cs" />
+    <Compile Include="ButtonAPI\Uni\TabControls\SliderControl.cs" />
+    <Compile Include="ButtonAPI\Uni\TabControls\ToggleControl.cs" />
+    <Compile Include="ButtonAPI\Utils.cs" />
+    <Compile Include="Main\Game.cs" />
+    <Compile Include="Main\Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y /R "$(TargetDir)$(TargetName).dll" "C:\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Mods"</PostBuildEvent>
+  </PropertyGroup>
+</Project>
