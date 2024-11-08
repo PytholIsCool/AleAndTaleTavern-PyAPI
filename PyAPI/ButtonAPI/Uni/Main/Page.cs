@@ -12,8 +12,14 @@ using Object = UnityEngine.Object;
 
 namespace PyAPI.ButtonAPI.Uni.Main {
     public class Page : PyPage {
+        public static Page Instance;
+
         private static Transform currentHome;
         private static Transform currentParent;
+        public Tab CurrentTab { get; set; }
+        //private GameMenu.State GamePageState { get; set; }
+        //private MainMenu.State MainPageState { get; set; }
+        public int OpenCount { get; private set; }
         public Page() {
             Transform currentRef = SceneManager.GetActiveScene().name == "MM3" ? RefSetMain() : RefSetGame();
 
@@ -35,30 +41,56 @@ namespace PyAPI.ButtonAPI.Uni.Main {
             Contents.Find("gp").gameObject.SetActive(false);
 
             (Back = Contents.Find("Button Back").GetComponent<Button>()).onClick.RemoveAllListeners();
-            (Back.onClick = new Button.ButtonClickedEvent()).AddListener(new UnityEngine.Events.UnityAction(() => OnBack()));
+            (Back.onClick = new Button.ButtonClickedEvent()).AddListener(delegate { OnBack(); });
 
             Tabs = new List<Tab>();
         }
         public void OpenMenu() {
+            OpenCount = 0;
             this.gameObject.SetActive(true);
             currentHome.gameObject.SetActive(false);
             FmodManager.Instance.Play(SoundEvent.Page);
+            if (Tabs.Count != -1 && OpenCount == 0) {
+                Tabs[0].OpenContents(true);
+                OpenCount++;
+            }
+            Instance = this;
+
+            if (SceneManager.GetActiveScene().name == "MM3")
+                MainMenuAPIBase.MainMenuCompnt.SetState(MainMenu.State.Settings);
+            else
+                GameAPIBase.GameMenuCompnt.SetState(GameMenu.State.MenuSettings);
         }
-        private void OnBack() {
+        public void OnBack(bool silent = false) {
             this.gameObject.SetActive(false);
             currentHome.gameObject.SetActive(true);
-            FmodManager.Instance.Play(SoundEvent.UIButton);
+            if (silent == false)
+                FmodManager.Instance.Play(SoundEvent.UIButton);
+            Instance = null;
+
+            if (SceneManager.GetActiveScene().name == "MM3")
+                MainMenuAPIBase.MainMenuCompnt.SetState(MainMenu.State.Home);
+            else
+                GameAPIBase.GameMenuCompnt.ShowMenuHome();
         }
         public Tab AddTab(string text) => new Tab(this, text);
-        private static Transform RefSetMain() {
+        private Transform RefSetMain() {
             currentParent = MainMenuAPIBase.MainMenu;
             currentHome = MainMenuAPIBase.Home;
             return MainMenuAPIBase.Settings;
         }
-        private static Transform RefSetGame() {
+        private Transform RefSetGame() {
             currentParent = GameAPIBase.Settings.parent;
             currentHome = GameAPIBase.Home;
             return GameAPIBase.Settings;
+        }
+        /// <summary>
+        /// PLACE THIS IN YOUR MOD'S ONUPDATE OVERRIDE
+        /// </summary>
+        public static void PageOnEscapeHandler() {
+            if (Input.GetKeyDown(KeyCode.Escape) && Instance != null) {
+                Instance.OnBack(true);
+            }
         }
     }
 }

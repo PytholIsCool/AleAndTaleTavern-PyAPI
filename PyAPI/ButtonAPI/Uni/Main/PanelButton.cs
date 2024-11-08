@@ -19,8 +19,10 @@ namespace PyAPI.ButtonAPI.Uni.Main {
             Object.Destroy(TMProCompnt.gameObject.GetComponent<LocalizeStringEvent>());
 
             (ButtonCompnt = transform.GetComponent<Button>()).onClick.RemoveAllListeners();
-            (ButtonCompnt.onClick = new Button.ButtonClickedEvent()).AddListener(Listener = listener);
-            ButtonCompnt.onClick.AddListener(new UnityAction(() => FmodManager.Instance.Play(SoundEvent.UIButton)));
+            (ButtonCompnt.onClick = new Button.ButtonClickedEvent()).AddListener(delegate {
+                (Listener = listener).Invoke();
+                FmodManager.Instance.Play(SceneManager.GetActiveScene().name == "MM3" ? SoundEvent.UIButton : SoundEvent.Page);
+            });
         }
         public PanelButton(string text, UnityAction listener)
             : this((SceneManager.GetActiveScene().name == "MM3" ? MainMenuAPIBase.PanelButtonTemplate : GameAPIBase.PanelButtonTemplate).parent, text, listener) { }

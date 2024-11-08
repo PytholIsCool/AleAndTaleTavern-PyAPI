@@ -500,10 +500,12 @@
     <Compile Include="ButtonAPI\Types\Root.cs" />
     <Compile Include="ButtonAPI\Uni\Main\Page.cs" />
     <Compile Include="ButtonAPI\Uni\Main\PanelButton.cs" />
-    <Compile Include="ButtonAPI\Uni\Tab.cs" />
-    <Compile Include="ButtonAPI\Uni\TabControls\Selector.cs" />
-    <Compile Include="ButtonAPI\Uni\TabControls\SliderControl.cs" />
-    <Compile Include="ButtonAPI\Uni\TabControls\ToggleControl.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\Tab.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\TabControls\ButtonControl.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\TabControls\Selector.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\TabControls\SliderControl.cs" />
+    <Compile Include="ButtonAPI\Uni\Main\TabControls\ToggleControl.cs" />
+    <Compile Include="ButtonAPI\Uni\Popup.cs" />
     <Compile Include="ButtonAPI\Utils.cs" />
     <Compile Include="Main\Game.cs" />
     <Compile Include="Main\Main.cs" />

@@ -9,21 +9,33 @@ namespace PyAPI.Main {
             Pg = new Page();
 
             var QOL = Pg.AddTab("QOL");
-            QOL.AddToggle("ERP-Mode", (val) => {
+            QOL.AddToggle("Toggle 1", (val) => {
 
             });
-            QOL.AddToggle("Yes!!!!!", (val) => {
+            QOL.AddToggle("Toggle 2", (val) => {
 
             });
-            QOL.AddSlider("Freak Meter", (val) => {
+            QOL.AddSlider("Slider Control", (val) => {
 
             }, 10f);
-            QOL.AddSelector("Freak Select").AddSetting("Freaky 1", () => {
+            QOL.AddSelector("Selector Control").AddSetting("Setting 1", () => {
 
-            }).AddSetting("Freaky 2", () => {
+            }).AddSetting("Setting 2", () => {
 
-            }).AddSetting("Freaky 3", () => {
+            }).AddSetting("Setting 3", () => {
 
+            });
+            QOL.AddButton("TestButton", "Test", () => {
+                Popup.StandardPrompt("Test", () => {
+                    MelonLogger.Msg("Applied");
+                });
+            });
+            QOL.AddButton("TestButton2", "Test", () => {
+                Popup.TextPrompt("TestText", (val) => {
+                    MelonLogger.Msg("Input: " + val);
+                });
+            }).AddButton("Sup", () => {
+                MelonLogger.Msg("Sup Test");
             });
 
             var Misc = Pg.AddTab("Misc");

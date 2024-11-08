@@ -1,6 +1,7 @@
 ﻿using ButtonAPI.GameAPI;
 using ButtonAPI.MainMenuAPI;
 using MelonLoader;
+using PyAPI.ButtonAPI.Uni.Main;
 using PyAPI.Main;
 
 namespace PyAPI
@@ -43,32 +44,32 @@ namespace PyAPI
             MelonLogger.Msg("OnSceneWasUnloaded: " + buildIndex.ToString() + " | " + sceneName);
         }
 
-        //public override void OnUpdate() {
-            
-        //}
+        public override void OnUpdate() {
+            Page.PageOnEscapeHandler();
+        }
 
         //public override void OnFixedUpdate() {
-            
+
         //}
 
         //public override void OnLateUpdate() {
-            
+
         //}
 
         //public override void OnGUI() {
-            
+
         //}
 
         //public override void OnApplicationQuit() {
-            
+
         //}
 
         //public override void OnPreferencesSaved() {
-            
+
         //}
 
         //public override void OnPreferencesLoaded() {
-            
+
         //}
     }
 }
