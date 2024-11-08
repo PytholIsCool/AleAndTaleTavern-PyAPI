@@ -16,11 +16,14 @@
 ## V.1.1.0
 - Added
 > Standard Popups
+
 > Text Popups
+
 > Button Control
 
 - Fixed
 > Page, Tab and PanelButton behavior not behaving as it does in-game
+
 > Escape not leaving custom menus
   
 ## Config-friendly controls
