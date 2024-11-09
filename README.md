@@ -27,12 +27,13 @@
 > Escape not leaving custom menus
 
 ## V1.1.1
-- Made all menus fully function as they do in-game (given that the API is used properly)
+- More behavior fixes
 
 
 # THINGS TO KEEP IN MIND
 - Page nesting likely won't work
 - Popups don't have escape handling
+- I'm actively trying to find workarounds
 
 
 ## Config-friendly controls
