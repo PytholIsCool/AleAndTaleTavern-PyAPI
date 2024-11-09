@@ -30,6 +30,11 @@
 - Made all menus fully function as they do in-game (given that the API is used properly)
 
 
+# THINGS TO KEEP IN MIND
+- Page nesting likely won't work
+- Popups don't have escape handling
+
+
 ## Config-friendly controls
 ## Support for both the main menu and the in-game menu
 
