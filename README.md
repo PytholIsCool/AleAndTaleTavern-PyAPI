@@ -25,7 +25,11 @@
 > Page, Tab and PanelButton behavior not behaving as it does in-game
 
 > Escape not leaving custom menus
-  
+
+## V1.1.1
+- Made all menus fully function as they do in-game (given that the API is used properly)
+
+
 ## Config-friendly controls
 ## Support for both the main menu and the in-game menu
 
