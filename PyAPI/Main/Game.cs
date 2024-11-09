@@ -1,6 +1,6 @@
 ﻿using ButtonAPI.Uni;
 using MelonLoader;
-using PyAPI.ButtonAPI.Uni.Main;
+using ButtonAPI.Uni.Main;
 
 namespace PyAPI.Main {
     internal class GameMenus {

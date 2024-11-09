@@ -1,13 +1,5 @@
-﻿using MelonLoader;
-using PyAPI.ButtonAPI.Uni.Main;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Windows;
-using Input = UnityEngine.Input;
 using Object = UnityEngine.Object;
 
 namespace ButtonAPI {

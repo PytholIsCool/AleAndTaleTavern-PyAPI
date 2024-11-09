@@ -9,7 +9,6 @@ using UnityEngine.Events;
 using UnityEngine.Localization.Components;
 using ButtonAPI.Uni;
 using ButtonAPI;
-using MelonLoader;
 
 namespace PyAPI.ButtonAPI.Uni.TabControls {
     public class ButtonControl : Root {

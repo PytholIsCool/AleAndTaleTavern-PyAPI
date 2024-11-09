@@ -1,14 +1,11 @@
 ﻿using ButtonAPI.GameAPI;
 using ButtonAPI.MainMenuAPI;
 using ButtonAPI.Types;
-using System;
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using Object = UnityEngine.Object;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace ButtonAPI.Uni.TabControls {
     public class ToggleControl : Root {

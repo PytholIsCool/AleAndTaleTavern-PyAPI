@@ -1,8 +1,6 @@
-﻿using ButtonAPI;
-using ButtonAPI.GameAPI;
+﻿using ButtonAPI.GameAPI;
 using ButtonAPI.MainMenuAPI;
 using ButtonAPI.Types;
-using ButtonAPI.Uni;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-namespace PyAPI.ButtonAPI.Uni.Main {
+namespace ButtonAPI.Uni.Main {
     public class Page : PyPage {
         public static Page Instance;
 
@@ -89,7 +87,13 @@ namespace PyAPI.ButtonAPI.Uni.Main {
         /// </summary>
         public static void PageOnEscapeHandler() {
             if (Input.GetKeyDown(KeyCode.Escape) && Instance != null) {
-                Instance.OnBack(true);
+                if (SceneManager.GetActiveScene().name == "MM3") {
+                    Instance.OnBack(true);
+                } else {
+                    Instance.gameObject.SetActive(false);
+                    Instance = null;
+                    GameAPIBase.GameMenuCompnt.ShowMenuSettings();
+                }
             }
         }
     }

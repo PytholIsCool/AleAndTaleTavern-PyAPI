@@ -1,7 +1,7 @@
 ﻿using ButtonAPI.GameAPI;
 using ButtonAPI.MainMenuAPI;
 using MelonLoader;
-using PyAPI.ButtonAPI.Uni.Main;
+using ButtonAPI.Uni.Main;
 using PyAPI.Main;
 
 namespace PyAPI
@@ -11,7 +11,7 @@ namespace PyAPI
         public const string Description = "Button API for Ale & Tale";
         public const string Author = "Pythol";
         public const string Company = null;
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.1";
         public const string DownloadLink = null;
     }
 

@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 
-namespace PyAPI.ButtonAPI.Uni.Main {
+namespace ButtonAPI.Uni.Main {
     public class PanelButton : Root {
         public PanelButton(Transform parent, string text, UnityAction listener) {
             Transform reference = SceneManager.GetActiveScene().name == "MM3" ? MainMenuAPIBase.PanelButtonTemplate : GameAPIBase.PanelButtonTemplate;
