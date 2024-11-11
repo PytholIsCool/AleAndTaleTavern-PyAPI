@@ -29,12 +29,17 @@
 ## V1.1.1
 - More behavior fixes
 
+# Experimental phase over! Full API out now.
+## V1.2
+- Added
+> Proper escape handeling for pages and popups
 
-# THINGS TO KEEP IN MIND
-- Page nesting likely won't work
-- Popups don't have escape handling
-- I'm actively trying to find workarounds
+> Page nesting
 
+> Simplified API use
+
+- Removed
+> Users no longer need to place the escape handler in their OnUpdate ML override method 
 
 ## Config-friendly controls
 ## Support for both the main menu and the in-game menu
