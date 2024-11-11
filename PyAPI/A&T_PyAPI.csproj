@@ -31,6 +31,10 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="0Harmony, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\MelonLoader\net35\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Ale and Tale Tavern\Ale and Tale Tavern_Data\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
@@ -505,10 +509,13 @@
     <Compile Include="ButtonAPI\Uni\Main\TabControls\Selector.cs" />
     <Compile Include="ButtonAPI\Uni\Main\TabControls\SliderControl.cs" />
     <Compile Include="ButtonAPI\Uni\Main\TabControls\ToggleControl.cs" />
+    <Compile Include="ButtonAPI\Uni\Patches.cs" />
     <Compile Include="ButtonAPI\Uni\Popup.cs" />
     <Compile Include="ButtonAPI\Utils.cs" />
     <Compile Include="Main\Game.cs" />
     <Compile Include="Main\Main.cs" />
+    <Compile Include="Main\NestedPagesTest\Game.cs" />
+    <Compile Include="Main\NestedPagesTest\Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Main.cs" />
   </ItemGroup>

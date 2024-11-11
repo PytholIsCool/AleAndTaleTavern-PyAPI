@@ -19,6 +19,7 @@ namespace ButtonAPI.Uni {
         private static TextMeshProUGUI TextTitle;
         private static TMP_InputField TextInput;
 
+        public static bool isPopupActive;
         public static void StandardPrompt(string title, UnityAction onApply, UnityAction onBack = null, string backText = "Cancel", string applyText = "Confirm") {
             Transform reference = SceneManager.GetActiveScene().name == "MM3" ? RefSetMain() : RefSetGame();
             if (reference.Find("PopupManager") == null)
@@ -38,6 +39,8 @@ namespace ButtonAPI.Uni {
                 PopupObj.gameObject.SetActive(false);
                 onBack?.Invoke();
                 FmodManager.Instance.Play(SoundEvent.UIButton);
+
+                isPopupActive = false;
             });
             var apply = PopupObj.Find("Button Apply").GetComponent<Button>();
             apply.onClick.RemoveAllListeners();
@@ -46,7 +49,11 @@ namespace ButtonAPI.Uni {
                 PopupObj.gameObject.SetActive(false);
                 onApply.Invoke();
                 FmodManager.Instance.Play(SoundEvent.UIButton);
+
+                isPopupActive = false;
             });
+
+            isPopupActive = true;
         }
 
         public static void TextPrompt(string title, UnityAction<string> onApply, UnityAction onBack = null, string backText = "Cancel", string applyText = "Confirm") {
@@ -69,6 +76,8 @@ namespace ButtonAPI.Uni {
                 TextInput.text = null;
                 onBack?.Invoke();
                 FmodManager.Instance.Play(SoundEvent.UIButton);
+
+                isPopupActive = false;
             });
             var apply = TextObj.Find("Button Apply").GetComponent<Button>();
             apply.onClick.RemoveAllListeners();
@@ -78,7 +87,11 @@ namespace ButtonAPI.Uni {
                 onApply.Invoke(TextInput.text);
                 TextInput.text = null;
                 FmodManager.Instance.Play(SoundEvent.UIButton);
+
+                isPopupActive = false;
             });
+
+            isPopupActive = true;
         }
 
         private static void CreatePopupMan(Transform p) {

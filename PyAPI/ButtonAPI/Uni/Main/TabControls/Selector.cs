@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
 using MelonLoader;
-//used a lot of code from my vrc api
+
 namespace ButtonAPI.Uni.TabControls {
     public class Selector : Root {
         public TextMeshProUGUI TMProSelectorLabel { get; internal set; }

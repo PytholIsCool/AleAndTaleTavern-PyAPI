@@ -6,6 +6,8 @@ namespace PyAPI.Main {
     internal class GameMenus {
         private static Page Pg;
         public static void Init() {
+            NestedPagesTest.Game.Init();
+
             Pg = new Page();
 
             var QOL = Pg.AddTab("QOL");
@@ -35,7 +37,7 @@ namespace PyAPI.Main {
                     MelonLogger.Msg("Input: " + val);
                 });
             }).AddButton("Sup", () => {
-                MelonLogger.Msg("Sup Test");
+                NestedPagesTest.Game.Pg.OpenMenu();
             });
 
             var Misc = Pg.AddTab("Misc");

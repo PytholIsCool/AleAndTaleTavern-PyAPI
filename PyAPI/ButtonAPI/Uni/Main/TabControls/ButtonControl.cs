@@ -48,9 +48,6 @@ namespace PyAPI.ButtonAPI.Uni.TabControls {
         /// <summary>
         /// Adds another button to the same column. MAX 3 BUTTONS.
         /// </summary>
-        /// <param name="buttonText"></param>
-        /// <param name="listener"></param>
-        /// <returns></returns>
         public ButtonControl AddButton(string buttonText, UnityAction listener) {
             Transform ButtonObj;
             TextMeshProUGUI TMP;

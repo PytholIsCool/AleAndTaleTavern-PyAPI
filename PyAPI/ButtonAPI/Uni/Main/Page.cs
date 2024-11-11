@@ -7,18 +7,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Object = UnityEngine.Object;
+using UnityEngine.Events;
 
 namespace ButtonAPI.Uni.Main {
     public class Page : PyPage {
-        public static Page Instance;
-
-        private static Transform currentHome;
         private static Transform currentParent;
+        private static Transform currentHome;
         public Tab CurrentTab { get; set; }
-        //private GameMenu.State GamePageState { get; set; }
-        //private MainMenu.State MainPageState { get; set; }
-        public int OpenCount { get; private set; }
-        public Page() {
+        private int OpenCount { get; set; }
+        private static List<Page> pageHistory = new List<Page>();
+        public static bool isPageOpen;
+        public static Page CurrentPage;
+        private static bool scenePatched;
+        public Page(UnityAction onEscape = null) {
             Transform currentRef = SceneManager.GetActiveScene().name == "MM3" ? RefSetMain() : RefSetGame();
 
             (transform = (gameObject = Object.Instantiate(currentRef, currentParent).gameObject).transform).name = $"PyPage_{Guid.NewGuid()}";
@@ -42,34 +43,60 @@ namespace ButtonAPI.Uni.Main {
             (Back.onClick = new Button.ButtonClickedEvent()).AddListener(delegate { OnBack(); });
 
             Tabs = new List<Tab>();
+
+            if (!scenePatched)
+                SceneManager.sceneLoaded += delegate {
+                    if (SceneManager.GetActiveScene().name == "MM3" || SceneManager.GetActiveScene().name == "Playtest") {
+                        pageHistory.Clear();
+                        isPageOpen = false;
+                        CurrentPage = null;
+                    }
+                    scenePatched = true;
+                };
         }
         public void OpenMenu() {
             OpenCount = 0;
+
+            foreach (var page in pageHistory) {
+                page.gameObject.SetActive(false);
+            }
+
             this.gameObject.SetActive(true);
             currentHome.gameObject.SetActive(false);
             FmodManager.Instance.Play(SoundEvent.Page);
-            if (Tabs.Count != -1 && OpenCount == 0) {
+
+            if (Tabs.Count > 0 && OpenCount == 0) {
                 Tabs[0].OpenContents(true);
                 OpenCount++;
             }
-            Instance = this;
+            if (!pageHistory.Contains(this))
+                pageHistory.Add(this);
 
-            if (SceneManager.GetActiveScene().name == "MM3")
-                MainMenuAPIBase.MainMenuCompnt.SetState(MainMenu.State.Settings);
-            else
-                GameAPIBase.GameMenuCompnt.SetState(GameMenu.State.MenuSettings);
+            isPageOpen = true;
+            CurrentPage = this;
         }
-        public void OnBack(bool silent = false) {
-            this.gameObject.SetActive(false);
-            currentHome.gameObject.SetActive(true);
-            if (silent == false)
-                FmodManager.Instance.Play(SoundEvent.UIButton);
-            Instance = null;
 
-            if (SceneManager.GetActiveScene().name == "MM3")
-                MainMenuAPIBase.MainMenuCompnt.SetState(MainMenu.State.Home);
-            else
-                GameAPIBase.GameMenuCompnt.ShowMenuHome();
+        public void OnBack(bool silent = false, UnityAction onEscape = null) {
+            this.gameObject.SetActive(false);
+
+            if (pageHistory.Contains(this))
+                pageHistory.Remove(this);
+            if (pageHistory.Count > 0)
+                pageHistory[pageHistory.Count - 1].OpenMenu();
+            else {
+                if (SceneManager.GetActiveScene().name == "MM3") {
+                    MainMenuAPIBase.MainMenuCompnt.SetState(MainMenu.State.Home);
+                } else {
+                    GameAPIBase.GameMenuCompnt.SetState(GameMenu.State.MenuHome);
+                }
+                currentHome.gameObject.SetActive(true);
+                isPageOpen = false;
+            }
+
+            if (!silent)
+                FmodManager.Instance.Play(SoundEvent.UIButton);
+
+            onEscape?.Invoke();
         }
         public Tab AddTab(string text) => new Tab(this, text);
         private Transform RefSetMain() {
@@ -81,20 +108,6 @@ namespace ButtonAPI.Uni.Main {
             currentParent = GameAPIBase.Settings.parent;
             currentHome = GameAPIBase.Home;
             return GameAPIBase.Settings;
-        }
-        /// <summary>
-        /// PLACE THIS IN YOUR MOD'S ONUPDATE OVERRIDE
-        /// </summary>
-        public static void PageOnEscapeHandler() {
-            if (Input.GetKeyDown(KeyCode.Escape) && Instance != null) {
-                if (SceneManager.GetActiveScene().name == "MM3") {
-                    Instance.OnBack(true);
-                } else {
-                    Instance.gameObject.SetActive(false);
-                    Instance = null;
-                    GameAPIBase.GameMenuCompnt.ShowMenuSettings();
-                }
-            }
         }
     }
 }

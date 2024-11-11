@@ -1,4 +1,5 @@
-﻿using MelonLoader;
+﻿using ButtonAPI.Uni;
+using MelonLoader;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -26,7 +27,6 @@ namespace ButtonAPI.MainMenuAPI {
             if ((SliderTemplate = Settings?.Find("BG/Video/FOV")) == null) MelonLogger.Msg("PyAPI Error: \"SliderTemplate\" reference is null \nClass: MainMenuAPIBase");
             if ((ToggleTemplate = Settings?.Find("BG/Video/VSync")) == null) MelonLogger.Msg("PyAPI Error: \"ToggleTemplate\" reference is null \nClass: MainMenuAPIBase");
 
-
             return true;
         }
         /// <summary>
@@ -36,6 +36,9 @@ namespace ButtonAPI.MainMenuAPI {
         public static IEnumerator Primer(Action onComplete = null) {
             while (!IsReady())
                 yield return null;
+            if (!Patches.arePatchesApplied)
+                Patches.InitializePatches();
+
             onComplete?.Invoke();
         }
     }

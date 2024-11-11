@@ -10,6 +10,8 @@ namespace PyAPI.Main {
     internal class MainMenus {
         private static Page Pg;
         public static void Init() {
+            NestedPagesTest.Main.Init();
+
             Pg = new Page();
 
             var QOL = Pg.AddTab("QOL");
@@ -39,7 +41,7 @@ namespace PyAPI.Main {
                     MelonLogger.Msg("Input: " + val);
                 });
             }).AddButton("Sup", () => {
-                MelonLogger.Msg("Sup Test");
+                NestedPagesTest.Main.Pg.OpenMenu();
             });
 
             var Misc = Pg.AddTab("Misc");

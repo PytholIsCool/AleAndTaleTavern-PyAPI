@@ -1,7 +1,6 @@
 ﻿using ButtonAPI.GameAPI;
 using ButtonAPI.MainMenuAPI;
 using MelonLoader;
-using ButtonAPI.Uni.Main;
 using PyAPI.Main;
 
 namespace PyAPI
@@ -11,23 +10,11 @@ namespace PyAPI
         public const string Description = "Button API for Ale & Tale";
         public const string Author = "Pythol";
         public const string Company = null;
-        public const string Version = "1.1.1";
+        public const string Version = "1.2.0";
         public const string DownloadLink = null;
     }
 
     public class PyAPIExample : MelonMod {
-        public override void OnInitializeMelon() {
-            
-        }
-
-        //public override void OnLateInitializeMelon() {
-            
-        //}
-
-        public override void OnSceneWasLoaded(int buildindex, string sceneName) {
-            MelonLogger.Msg("OnSceneWasLoaded: " + buildindex.ToString() + " | " + sceneName);
-        }
-
         public override void OnSceneWasInitialized(int buildindex, string sceneName) {
             MelonLogger.Msg("OnSceneWasInitialized: " + buildindex.ToString() + " | " + sceneName);
             if (sceneName == "MM3") {
@@ -39,37 +26,5 @@ namespace PyAPI
                 MelonCoroutines.Start(GameAPIBase.Primer(GameMenus.Init));
             }
         }
-
-        public override void OnSceneWasUnloaded(int buildIndex, string sceneName) {
-            MelonLogger.Msg("OnSceneWasUnloaded: " + buildIndex.ToString() + " | " + sceneName);
-        }
-
-        public override void OnUpdate() {
-            Page.PageOnEscapeHandler();
-        }
-
-        //public override void OnFixedUpdate() {
-
-        //}
-
-        //public override void OnLateUpdate() {
-
-        //}
-
-        //public override void OnGUI() {
-
-        //}
-
-        //public override void OnApplicationQuit() {
-
-        //}
-
-        //public override void OnPreferencesSaved() {
-
-        //}
-
-        //public override void OnPreferencesLoaded() {
-
-        //}
     }
 }

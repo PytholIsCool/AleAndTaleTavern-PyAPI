@@ -1,4 +1,5 @@
-﻿using MelonLoader;
+﻿using ButtonAPI.Uni;
+using MelonLoader;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -36,6 +37,9 @@ namespace ButtonAPI.GameAPI {
         public static IEnumerator Primer(Action onComplete = null) {
             while (!IsReady())
                 yield return null;
+            if (!Patches.arePatchesApplied)
+                Patches.InitializePatches();
+
             onComplete?.Invoke();
         }
     }
